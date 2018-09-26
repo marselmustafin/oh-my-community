@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Authentication
   include Authorization
   include BulletHelper
+  include CommunityExposion
 
   protect_from_forgery with: :exception
 
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(_resource)
-    root_url(subdomain: current_community.subdomain)
+  def after_sign_in_path_for(user)
+    root_url(subdomain: user.community.subdomain)
   end
 end

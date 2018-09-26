@@ -1,4 +1,4 @@
-class SubdomainConstraint
+class CommunitySubdomainConstraint
   RESERVED_SUBDOMAINS = %w[www admin mail ftp].freeze
 
   def self.matches?(request)

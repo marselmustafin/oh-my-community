@@ -5,8 +5,14 @@
       input_html: { class: "form-control" }
     = f.input :email, label: false, required: true, placeholder: "Email",
       input_html: { class: "form-control" }
+    - if current_community.blank?
+      = f.simple_fields_for :community do |c|
+        = c.input :name, label: false, required: true, placeholder: "Company name"
+        = c.input :subdomain, label: false, required: true, placeholder: "Company subdomain"
     = f.input :password, label: false, required: true, placeholder: "Password",
       input_html: { class: "form-control" }
     = f.input :password_confirmation, label: false, required: true, placeholder: "Password Confirmation",
       input_html: { class: "form-control" }
     = f.button :submit, "Sign up", class: "btn btn-lg btn-primary btn-block"
+
+  = link_to "Sign In", new_user_session_url(subdomain: request.subdomain)

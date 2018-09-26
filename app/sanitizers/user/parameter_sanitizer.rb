@@ -5,13 +5,14 @@ class User
       email
       password
       password_confirmation
+      role
     ].freeze
 
-    COMMUNITY_PARAMS = %i[name domain].freeze
+    COMMUNITY_PARAMS = %i[name subdomain].freeze
 
     def initialize(*)
       super
-      permit(:sign_up, keys: USER_PARAMS.merge(community_attributes: COMMUNITY_PARAMS))
+      permit(:sign_up, keys: USER_PARAMS + [{ community_attributes: COMMUNITY_PARAMS }])
       permit(:account_update, keys: USER_PARAMS)
     end
   end

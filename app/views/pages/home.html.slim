@@ -1,11 +1,11 @@
 main role="main"
   section.jumbotron.text-center
     .container
-      h1.jumbotron-heading Create your own company
+      h1.jumbotron-heading Create your own community
       p.lead.text-muted Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.
       p
-        / = button_to "Begin to create communities", new_users_community_path,
-        /   class: "btn btn-primary btn-lg my-2", method: :get
+        = button_to "Create community", new_user_registration_path,
+          class: "btn btn-primary btn-lg my-2", method: :get
 
   .album.py-5.bg-light
     .container
@@ -25,6 +25,6 @@ main role="main"
                   h3 = community.name
                   p.card-text = community.description
                   .d-flex.justify-content-between.align-items-center
-                    = button_to "View", root_url(subdomain: community.subdomain),
+                    = button_to "View", new_user_registration_url(subdomain: community.subdomain),
                       method: :get, class: "btn btn-sm btn-outline-secondary"
                     small.text-muted 9 mins
