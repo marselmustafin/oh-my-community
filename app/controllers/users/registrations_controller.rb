@@ -1,9 +1,9 @@
 module Users
   class RegistrationsController < Devise::RegistrationsController
-    skip_before_action :require_community!
-
     def new
-      super(&:build_community) if current_community.blank?
+      super do |user|
+        user.build_community if current_community.blank?
+      end
     end
 
     protected

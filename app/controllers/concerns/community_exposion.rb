@@ -3,13 +3,13 @@ module CommunityExposion
 
   included do
     expose_decorated :current_community, :fetch_community, decorator: CommunityDecorator
-    before_action :require_community!
+    before_action :prevent_null_community_subdomain!
   end
 
   private
 
-  def require_community!
-    current_community || not_found
+  def prevent_null_community_subdomain!
+    request.subdomain.blank? || current_community || not_found
   end
 
   def fetch_community

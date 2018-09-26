@@ -1,7 +1,9 @@
 class Community < ApplicationRecord
-  has_many :members, class_name: "User", dependent: :destroy
+  has_many :members, class_name: "User", inverse_of: :community, dependent: :destroy
+
+  validates :name, :subdomain, presence: true
 
   def owner
-    members.find_by(role: "owner")
+    members.owner.first
   end
 end
