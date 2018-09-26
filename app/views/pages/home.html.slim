@@ -16,14 +16,15 @@ main role="main"
           p There no communities yet:(
       - else
         .row
-          / - communities.each do |community|
-          /   .col-md-4
-          /     .card.mb-4.shadow-sm
-          /       = image_tag community.image.variant(resize: "342x225")
-          /       .card-body
-          /         h3 = community.name
-          /         p.card-text = community.description
-          /         .d-flex.justify-content-between.align-items-center
-          /           = button_to "View", root_url(subdomain: community.subdomain),
-          /             method: :get, class: "btn btn-sm btn-outline-secondary"
-          /           small.text-muted 9 mins
+          - communities.each do |community|
+            .col-md-4
+              .card.mb-4.shadow-sm
+                = image_tag community.thumbnail
+                / = image_tag community.image.variant(resize: "342x225")
+                .card-body
+                  h3 = community.name
+                  p.card-text = community.description
+                  .d-flex.justify-content-between.align-items-center
+                    = button_to "View", root_url(subdomain: community.subdomain),
+                      method: :get, class: "btn btn-sm btn-outline-secondary"
+                    small.text-muted 9 mins

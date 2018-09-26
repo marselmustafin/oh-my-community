@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
   def not_found
     raise ActionController::RoutingError, "Not Found"
   end
+
+  protected
+
+  def after_sign_in_path_for(_resource)
+    root_url(subdomain: current_community.subdomain)
+  end
 end
