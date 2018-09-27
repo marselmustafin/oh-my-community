@@ -5,5 +5,8 @@ p
   b Text:
   = post.text
 
+= simple_form_for rating do |f|
+  f.input :value
+
 - if policy(post).update?
   = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-primary"

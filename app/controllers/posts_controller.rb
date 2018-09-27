@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authorize_post, only: %i[edit update destroy]
 
   expose_decorated :post, parent: :current_community
+  expose :rating, parent: :post
 
   def show
   end

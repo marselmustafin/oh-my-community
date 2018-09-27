@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
 
-  constraints RootSubdomainConstraint do
-
-  end
-
   constraints CommunitySubdomainConstraint do
     authenticated :user do
-      resources :posts
+      resources :posts, except: :index do
+        resource :rating, only: :create
+      end
 
       root "communities#show"
     end
