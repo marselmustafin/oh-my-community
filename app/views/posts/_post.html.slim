@@ -2,14 +2,15 @@
   .col-md-8
     .card
       .card-header
+        = post.title
       .card-body
         .card-title
-          = post.title
-          |
           = post.author.full_name
           |
           = post.created_at
           / = image_tag community.image.variant(resize: "342x225")
         .card-text
           = post.text
-          / = button_to 'Show', community, method: :get, class: "btn btn-primary"
+          = button_to "Show", post, method: :get, class: "btn btn-primary"
+          - if policy(post).update?
+            = button_to "Edit", edit_post_path(post), method: :get, class: "btn btn-primary"

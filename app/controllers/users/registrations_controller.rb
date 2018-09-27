@@ -27,7 +27,7 @@ module Users
     end
 
     def user_role
-      current_community.present? ? "owner" : "member"
+      current_community.present? ? "member" : "owner"
     end
 
     def sign_up_params

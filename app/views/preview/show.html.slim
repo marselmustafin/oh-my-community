@@ -1,1 +1,11 @@
+.text-center
+  h1 = current_community.name
 
+  p = current_community.description
+
+  = button_to "Sign In", new_user_session_path, method: :get, class: "btn btn-primary"
+
+  p
+    | First time in this community?
+    '
+    = link_to "Sign up", new_user_registration_path

@@ -25,6 +25,6 @@ main role="main"
                   h3 = community.name
                   p.card-text = community.description
                   .d-flex.justify-content-between.align-items-center
-                    = button_to "View", new_user_registration_url(subdomain: community.subdomain),
+                    = button_to "View", root_url(subdomain: community.subdomain),
                       method: :get, class: "btn btn-sm btn-outline-secondary"
                     small.text-muted 9 mins

@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
-  expose_decorated :post, parent: :current_community
+  before_action :authorize_post, only: %i[edit update destroy]
 
-  def index
-  end
+  expose_decorated :post, parent: :current_community
 
   def show
   end
@@ -27,11 +26,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    post.destroy
+
+    redirect_to root_url
   end
 
   private
+
+  def authorize_post
+    authorize post
+  end
 
   def post_params
     params.require(:post).permit(:title, :text)
