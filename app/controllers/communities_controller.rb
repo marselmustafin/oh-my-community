@@ -1,6 +1,8 @@
 class CommunitiesController < ApplicationController
   include CommunityExposion
 
-  def index
+  expose_decorated :posts, from: :current_community
+
+  def show
   end
 end

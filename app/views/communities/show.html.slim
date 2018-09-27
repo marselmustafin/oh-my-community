@@ -1,1 +1,9 @@
-h1 = current_community.name
+.text-center
+  h1 = current_community.name
+
+  = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary"
+
+- if posts.empty?
+  p There is no posts yet:(
+- else
+  = render posts

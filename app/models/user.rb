@@ -3,6 +3,7 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable, request_keys: %i[subdomain]
 
   belongs_to :community
+  has_many :posts, dependent: :destroy
 
   accepts_nested_attributes_for :community
 

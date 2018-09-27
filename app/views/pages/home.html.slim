@@ -18,7 +18,7 @@ main role="main"
         .row
           - communities.each do |community|
             .col-md-4
-              .card.mb-4.shadow-sm
+              .card.mb-6.shadow-sm.thumbnail
                 = image_tag community.thumbnail
                 / = image_tag community.image.variant(resize: "342x225")
                 .card-body

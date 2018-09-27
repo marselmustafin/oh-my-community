@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   constraints CommunitySubdomainConstraint do
     authenticated :user do
+      resources :posts
+
       root "communities#show"
     end
 

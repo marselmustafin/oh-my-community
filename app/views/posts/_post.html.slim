@@ -1,0 +1,15 @@
+.row.justify-content-md-center
+  .col-md-8
+    .card
+      .card-header
+      .card-body
+        .card-title
+          = post.title
+          |
+          = post.author.full_name
+          |
+          = post.created_at
+          / = image_tag community.image.variant(resize: "342x225")
+        .card-text
+          = post.text
+          / = button_to 'Show', community, method: :get, class: "btn btn-primary"
