@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   constraints CommunitySubdomainConstraint do
     authenticated :user do
       resources :posts, except: :index do
-        resource :rating, only: :create
+        resources :comments, only: %i[create update destroy]
+        resources :rating, only: :create
       end
 
       root "communities#show"
