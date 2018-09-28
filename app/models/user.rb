@@ -5,6 +5,7 @@ class User < ApplicationRecord
   belongs_to :community
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :ratings, dependent: :destroy
 
   accepts_nested_attributes_for :community
 

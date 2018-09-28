@@ -1,10 +1,12 @@
 class RatingsController < ApplicationController
-  expose :rating
+  expose :post
+  expose :rating, parent: :post
 
   def create
+    rating.user = current_user
     rating.save
 
-    respond_with rating
+    redirect_to post
   end
 
   private

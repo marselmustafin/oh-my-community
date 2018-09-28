@@ -5,13 +5,11 @@ p
   b Text:
   = post.text
 
-<<<<<<< HEAD
-= simple_form_for rating do |f|
-  f.input :value
-
 - if policy(post).update?
   = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-primary"
-=======
+
+= render "ratings/form"
+
 h2 Comments
 hr
 = render "comments/form"
@@ -20,4 +18,3 @@ hr
   = render comments
 
 = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-primary"
->>>>>>> c208a469b2407dfd1137b9b9a34eb203ee038648
