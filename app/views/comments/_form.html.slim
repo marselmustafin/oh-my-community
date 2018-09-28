@@ -1,0 +1,4 @@
+#comment-form
+  = simple_form_for [post, post.comments.build], remote: true do |f|
+    = f.input :content, label: false, placeholder: "Comment"
+    = f.submit

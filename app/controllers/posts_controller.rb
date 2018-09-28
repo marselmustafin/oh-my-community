@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   expose_decorated :post, parent: :current_community
+  expose_decorated :comments, -> { post.comments.includes(:commenter) }
 
   def index
   end
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    redirect_to root_url
   end
 
   private
