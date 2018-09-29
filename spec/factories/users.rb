@@ -1,10 +1,18 @@
 FactoryBot.define do
-  factory :user do
+  factory :user, aliases: %i[author commenter] do
     email
     full_name { Faker::Name.name }
     password { "123456" }
     password_confirmation { password }
-    confirmed_at { 1.hour.ago }
+    community
+  end
+
+  trait :owner do
+    role { :owner }
+  end
+
+  trait :member do
+    role { :member }
   end
 
   trait :not_confirmed do

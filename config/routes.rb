@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     authenticated :user do
       resources :posts, except: :index do
         resources :comments, only: %i[create update destroy]
-        resources :rating, only: :create
+        resources :ratings, only: :create
       end
 
       root "communities#show"
