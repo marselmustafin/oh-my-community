@@ -1,5 +1,5 @@
 class UserDecorator < ApplicationDecorator
-  delegate :id, :full_name, :email
+  delegate :id, :full_name, :email, :rating, :posts_count
 
   def registration_subdomain_role(subdomain)
     subdomain.blank? ? "member" : "owner"

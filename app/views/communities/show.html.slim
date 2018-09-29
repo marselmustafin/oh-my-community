@@ -1,6 +1,9 @@
 .text-center
   h1 = current_community.name
 
+  h2 Top 3 authors:
+  = render authors
+
   = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary"
 
 - if posts.empty?
