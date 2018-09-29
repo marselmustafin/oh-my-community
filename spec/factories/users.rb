@@ -5,6 +5,7 @@ FactoryBot.define do
     password { "123456" }
     password_confirmation { password }
     community
+    rating { generate(:rating_value) }
   end
 
   trait :owner do

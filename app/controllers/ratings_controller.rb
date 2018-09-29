@@ -1,15 +1,15 @@
 class RatingsController < ApplicationController
   expose :post
-  expose :rating, parent: :post
 
   def create
-    rating.user = current_user
-    rating.save
-
-    redirect_to post
+    respond_with approve_rating.rating
   end
 
   private
+
+  def approve_rating
+    @approve_rating ||= Ratings::Approve.call(post: post, user: current_user, params: rating_params)
+  end
 
   def rating_params
     params.require(:rating).permit(:value)

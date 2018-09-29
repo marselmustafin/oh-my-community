@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :rating do
-    value { rand(1..5) }
+    value { generate(:rating_value) }
     post
     user
   end
