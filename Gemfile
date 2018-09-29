@@ -7,7 +7,6 @@ gem "rails", "5.2.1"
 
 # assets
 gem "autoprefixer-rails"
-gem "coffee-rails"
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem "mini_racer"

@@ -1,7 +1,6 @@
-ul
-  li User
-  = user.full_name
-  li Rating
+.row
+  li = user.full_name
+  ' | Rating
   = user.rating
-  li Posts count
+  ' | Posts count
   = user.posts_count

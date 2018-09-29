@@ -8,7 +8,7 @@ class CommunitiesController < ApplicationController
   private
 
   def fetch_posts
-    current_community.posts.order(:created_at)
+    current_community.posts.order(created_at: :desc)
   end
 
   def fetch_top_authors

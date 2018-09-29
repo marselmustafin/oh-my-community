@@ -5,10 +5,12 @@ p
   b Text:
   = post.text
 
-- if policy(post).update?
+- if policy(post).edit?
   = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-primary"
 
-= render "ratings/form"
+- if policy(post).rate?
+  #rating-status
+  #rating data-score="#{post.user_rating_value(current_user)}" data-post-id="#{post.id}"
 
 h2 Comments
 hr
@@ -16,5 +18,3 @@ hr
 
 #post-comments
   = render comments
-
-= button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-primary"

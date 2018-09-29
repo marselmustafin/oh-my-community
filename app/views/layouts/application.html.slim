@@ -12,7 +12,7 @@ html lang="en"
 
   body
     = render "navigation"
-    = render "messages"
 
-    .container-fluid
+    .container
+      = render "messages"
       == yield

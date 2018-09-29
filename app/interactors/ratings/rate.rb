@@ -1,5 +1,5 @@
 module Ratings
-  class Approve
+  class Rate
     include Interactor::Organizer
 
     organize Create,

@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :authorize_post, only: %i[edit update destroy]
 
+  respond_to :html, :json, :js
+
   expose_decorated :post, parent: :current_community
   expose_decorated :comments, -> { post.comments.includes(:commenter) }
   expose :rating, parent: :post

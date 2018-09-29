@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Ratings::Approve do
+describe Ratings::Rate do
   let(:expected_interactors) do
     [
       Ratings::Create,

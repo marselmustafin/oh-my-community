@@ -5,3 +5,6 @@ p = comment.content
 p = comment.created_at
 
 hr
+
+- if policy(comment).edit?
+  = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-primary"
