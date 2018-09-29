@@ -16,7 +16,7 @@ $(document).ready(function () {
             value: score
           }
         },
-        success: $(this).attr("data-score", score),
+        success: $(this).raty("readOnly", true)
       })
     }
   });
