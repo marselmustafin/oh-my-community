@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :prevent_null_community_subdomain!
+  skip_before_action :prevent_visiting_null_community_subdomain!
 
   expose_decorated :communities, -> { Community.all }
 

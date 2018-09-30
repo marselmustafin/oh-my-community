@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include BulletHelper
   include CommunityExposion
 
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, prepend: true
 
   responders :flash
   respond_to :html
