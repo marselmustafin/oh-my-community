@@ -2,7 +2,7 @@
   h1 Community Users
 
 .card.component
-  = form_tag(members_path, method: :get) do
+  = form_tag(users_path, method: :get) do
     .row
       .col-4
         = label_tag :min_rating, "Search by name:"
@@ -18,4 +18,4 @@
       .form-actions
         = submit_tag :apply, class: "btn btn-primary apply-button"
 
-= render members
+= render users

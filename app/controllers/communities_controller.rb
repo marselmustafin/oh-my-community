@@ -12,6 +12,6 @@ class CommunitiesController < ApplicationController
   end
 
   def fetch_top_authors
-    current_community.members.order(rating: :desc).limit(3)
+    current_community.users.order(rating: :desc).limit(3)
   end
 end

@@ -1,17 +1,17 @@
-class MembersController < ApplicationController
-  expose_decorated :members, :fetch_members, decorator: UserDecorator
+class UsersController < ApplicationController
+  expose_decorated :users, :fetch_users, decorator: UserDecorator
 
   def index
   end
 
   private
 
-  def fetch_members
+  def fetch_users
     Users::SortedQuery.new(sorting_params[:sorting], filtered_users).all
   end
 
   def filtered_users
-    Users::FilteredQuery.new(filter_params, current_community.members).all
+    Users::FilteredQuery.new(filter_params, current_community.users).all
   end
 
   def sorting_params
