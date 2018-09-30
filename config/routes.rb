@@ -10,6 +10,8 @@ Rails.application.routes.draw do
         resources :ratings, only: :create
       end
 
+      resources :members, only: :index
+
       root "communities#show"
     end
 

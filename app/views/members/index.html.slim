@@ -1,0 +1,21 @@
+.text-center
+  h1 Community Users
+
+.card.component
+  = form_tag(members_path, method: :get) do
+    .row
+      .col-4
+        = label_tag :min_rating, "Search by name:"
+        = text_field_tag :keywords, nil, class: "form-control"
+        = label_tag :min_rating, "Min  Rating:"
+        = number_field_tag :min_rating, nil, in: 0..5, step: 0.1, class: "form-control"
+      .col-2
+        = label_tag :sorting, "Sort by:"
+        = fields_for :sorting do |ff|
+          = ff.select :sort_param, options_for_select(%w[rating posts_count]), {}, class: "form-control"
+          = ff.select :order, options_for_select(%w[desc asc]), {}, class: "form-control"
+
+      .form-actions
+        = submit_tag :apply, class: "btn btn-primary apply-button"
+
+= render members

@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   respond_to :json
+
   expose :post
 
   def create

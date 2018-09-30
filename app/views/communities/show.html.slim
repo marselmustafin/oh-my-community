@@ -3,6 +3,7 @@
 
   h2 Top 3 authors:
   = render authors
+  = button_to "Show all", members_path, method: :get, class: "btn btn-default btn-sm"
 
   = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary"
 

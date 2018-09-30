@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include PgSearch
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
@@ -12,4 +14,11 @@ class User < ApplicationRecord
   enum role: { member: "member", owner: "owner" }
 
   validates :full_name, presence: true
+
+  pg_search_scope :search_by_full_name_and_email,
+    against: %i[full_name email],
+    using: {
+      tsearch: { prefix: true },
+      trigram: { threshold: 0.3 }
+    }
 end
