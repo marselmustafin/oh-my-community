@@ -2,6 +2,7 @@ puts "== Seeding started =="
 
 community = FactoryBot.create(:community)
 
+FactoryBot.create(:admin, email: "admin@example.com")
 FactoryBot.create(:user, :owner, email: "owner@example.com", community: community)
 FactoryBot.create_list(:user, 4, :member, community: community)
 

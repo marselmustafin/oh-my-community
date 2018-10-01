@@ -11,7 +11,7 @@ module Authorization
   private
 
   def prevent_user_visiting_non_community_subdomain
-    current_user.blank? || current_user.community_id == current_community.id || user_not_authorized
+    current_user.blank? || current_user.community_id == current_community&.id || user_not_authorized
   end
 
   def prevent_visiting_null_community_subdomain!
