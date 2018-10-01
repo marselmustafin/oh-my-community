@@ -8,7 +8,8 @@
     - if current_community.blank?
       = f.simple_fields_for :community do |c|
         = c.input :name, label: false, required: true, placeholder: "Company name"
-        = c.input :subdomain, label: false, required: true, placeholder: "Company subdomain"
+        = c.input :subdomain, label: false, required: true, placeholder: "Company subdomain",
+          hint: "Use only lowercase letters, numbers and dashes."
     = f.input :password, label: false, required: true, placeholder: "Password",
       input_html: { class: "form-control" }
     = f.input :password_confirmation, label: false, required: true, placeholder: "Password Confirmation",

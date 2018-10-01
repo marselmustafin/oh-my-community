@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   has_many :ratings, dependent: :destroy
 
   validates :title, :text, presence: true
+  validates :title, length: { maximum: 100 }
 end
