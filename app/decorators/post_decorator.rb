@@ -1,5 +1,5 @@
 class PostDecorator < ApplicationDecorator
-  delegate :id, :author, :title, :text, :ratings, :comments
+  delegate :id, :author, :title, :text, :ratings, :comments, :average_rating
 
   def user_rating_value(user_id)
     rating = object.ratings.find_by(user_id: user_id)
