@@ -5,7 +5,7 @@ Rack::MiniProfilerRails.initialize!(Rails.application)
 Rack::MiniProfiler.config.storage = Rack::MiniProfiler::MemoryStore
 
 # Disable MiniProfiler by default, it could be enabled by query string "pp=enable"
-Rack::MiniProfiler.config.enabled = Rails.env.development? || Rails.env.staging?
+Rack::MiniProfiler.config.enabled = Rails.env.development?
 
 # Configure authorization hook based on IP whitelist
 Rack::MiniProfiler.config.authorization_mode = :allow_all
