@@ -1,10 +1,10 @@
 ENV["RAILS_ENV"] ||= "test"
 
 require "spec_helper"
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path("../config/environment", __dir__)
 require "rspec/rails"
 require "shoulda/matchers"
-require 'capybara-screenshot/rspec'
+require "capybara-screenshot/rspec"
 
 Dir[Rails.root.join("spec", "support", "**", "*.rb")].each { |f| require f }
 
