@@ -9,6 +9,16 @@ module Authentication
     end
   end
 
+  protected
+
+  def after_sign_in_path_for(resource)
+    if resource.class == Admin
+      rails_admin_path
+    elsif resource.class == User
+      root_url(subdomain: resource.community.subdomain)
+    end
+  end
+
   private
 
   def devise_parameter_sanitizer

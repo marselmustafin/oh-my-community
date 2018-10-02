@@ -10,22 +10,15 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
-    # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
-    # include_blanks:
-    #   defaults:
-    #     age: 'Rather not say'
-    # prompts:
-    #   defaults:
-    #     age: 'Select your age'
+    placeholders:
+      user:
+        full_name: "Full Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+      community:
+        name: "Community Name"
+        subdomain: "Community Subdomain"
+    hints:
+      community:
+        subdomain: "Use only lowercase letters, numbers and dashes."

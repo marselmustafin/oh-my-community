@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  expose_decorated :users, :fetch_users, decorator: UserDecorator
+  expose_decorated :users, :fetch_users
 
   def index
   end

@@ -4,9 +4,9 @@ feature "Sign Out" do
   include_context "current user signed in"
 
   scenario "User signs out" do
-    visit "/"
+    visit_community current_community
     click_link "Sign out"
 
-    expect(page).to have_content("Sign in")
+    expect(page).to have_content("Signed out")
   end
 end

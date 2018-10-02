@@ -1,13 +1,14 @@
 require "rails_helper"
 
 feature "Sign In" do
-  let(:user) { create :user }
-  let(:unconfirmed_user) { create :user, :not_confirmed }
+  let!(:community) { create :community }
+  let(:user) { create :user, community: community }
 
   def sign_in(email, password)
-    visit new_user_session_path
+    visit_community community, new_user_session_path
 
-    fill_form(:user, email: email, password: password)
+    fill_in("Email", with: email)
+    fill_in("Password", with: password)
     click_button "Sign in"
   end
 
@@ -22,11 +23,5 @@ feature "Sign In" do
 
     expect(page).to have_content("Sign in")
     expect(page).to have_content("Invalid Email or password")
-  end
-
-  scenario "Visitor signs in with unconfirmed email address" do
-    sign_in(unconfirmed_user.email, user.password)
-
-    expect(page).to have_content("You have to confirm your email address before continuing.")
   end
 end

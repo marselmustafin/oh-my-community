@@ -1,3 +1,4 @@
 .justify-content-end
   - if user_signed_in?
-    = link_to "Log out", destroy_user_session_url(subdomain: request.subdomain), class: "btn btn-outline-primary"
+    = link_to "Edit Profile", edit_user_registration_path, class: "p-4 text-light"
+    = link_to "Sign out", destroy_user_session_url(subdomain: request.subdomain), class: "btn btn-outline-primary"

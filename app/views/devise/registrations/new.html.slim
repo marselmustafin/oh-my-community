@@ -1,17 +1,13 @@
 .text-center
   = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signup" } do |f|
     h1.h3.mb-3.font-weight-normal Sign up
-    = f.input :full_name, label: false, required: true, autofocus: true, placeholder: "Full Name",
+    = f.input :full_name, label: false, required: true, autofocus: true,
       input_html: { class: "form-control" }
-    = f.input :email, label: false, required: true, placeholder: "Email",
-      input_html: { class: "form-control" }
+    = f.input :email, label: false, required: true, input_html: { class: "form-control" }
     - if current_community.blank?
       = f.simple_fields_for :community do |c|
-        = c.input :name, label: false, required: true, placeholder: "Company name"
-        = c.input :subdomain, label: false, required: true, placeholder: "Company subdomain",
-          hint: "Use only lowercase letters, numbers and dashes."
-    = f.input :password, label: false, required: true, placeholder: "Password",
-      input_html: { class: "form-control" }
-    = f.input :password_confirmation, label: false, required: true, placeholder: "Password Confirmation",
-      input_html: { class: "form-control" }
+        = c.input :name, label: false, required: true
+        = c.input :subdomain, label: false, required: true
+    = f.input :password, label: false, required: true, input_html: { class: "form-control" }
+    = f.input :password_confirmation, label: false, required: true, input_html: { class: "form-control" }
     = f.button :submit, "Sign up", class: "btn btn-lg btn-primary btn-block"

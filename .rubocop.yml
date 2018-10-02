@@ -33,6 +33,12 @@ RSpec/MessageSpies:
 RSpec/ImplicitSubject:
   Enabled: false
 
+RSpec/ContextWording:
+  Enabled: false
+
+Capybara/FeatureMethods:
+  Enabled: false
+
 Style/AndOr:
   Enabled: false
 
