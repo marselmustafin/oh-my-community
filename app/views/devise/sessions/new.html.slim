@@ -1,5 +1,5 @@
 .text-center
-  = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" } do |f|
+  = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "user-form" } do |f|
     h1.h3.mb-3.font-weight-normal Sign in
     = f.input :email, required: true, label: false, autofocus: true, input_html: { class: "form-control" }
     = f.input :password, required: true, label: false, input_html: { class: "form-control" }

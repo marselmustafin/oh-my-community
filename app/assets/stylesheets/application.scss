@@ -3,10 +3,13 @@
 @import "sign_up";
 @import "communities";
 
+$bg-color: #eee;
+$container-bg-color: #fff;
+
 body {
-  background-color: #eeeeee;
+  background-color: $bg-color;
 }
 
 .main-container {
-  background-color: white;
+  background-color: $container-bg-color;
 }
