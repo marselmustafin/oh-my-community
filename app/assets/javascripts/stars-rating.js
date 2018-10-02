@@ -21,7 +21,7 @@ $(document).ready(function () {
           $('#rating').raty("readOnly", true);
           $('#rating-status').text("Your rating successfully submitted!")
         },
-        error:function () {
+        error: function () {
           $('#rating-status').text("Something went wrong!")
         }
       })
