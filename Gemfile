@@ -54,7 +54,7 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara"
+  gem "capybara", "~> 3.7.2"
   gem "capybara-screenshot"
   gem "capybara-webkit"
   gem "database_cleaner"
