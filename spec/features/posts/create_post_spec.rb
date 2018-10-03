@@ -5,7 +5,7 @@ feature "Create Post" do
 
   let(:post_attributes) { attributes_for(:post).slice(:title, :text) }
 
-  scenario "User creates post" do
+  scenario "User creates post", :js do
     visit_community current_community, new_post_path
 
     fill_form(:post, post_attributes)
