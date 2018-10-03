@@ -4,7 +4,7 @@
 
 Based on Rails 5.1.2 and Ruby 2.5.1
 
-###Basic features:
+### Basic features:
 
 - User can register his community and become its owner
 
