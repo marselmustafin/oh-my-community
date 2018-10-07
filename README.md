@@ -2,6 +2,8 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/marselmustafin/oh-my-community/branches/master/badge.svg)](https://semaphoreci.com/marselmustafin/oh-my-community)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/b793bcd67fcedff844cf/maintainability)](https://codeclimate.com/github/marselmustafin/oh-my-community/maintainability)
+
 Based on Rails 5.1.2 and Ruby 2.5.1
 
 ### Basic features:
