@@ -57,7 +57,6 @@ group :test do
   gem "capybara", "~> 3.7.2"
   gem "capybara-screenshot"
   gem "capybara-webkit"
-  gem "database_cleaner"
   gem "email_spec"
   gem "formulaic"
   gem "guard-rspec"
@@ -65,6 +64,7 @@ group :test do
   gem "poltergeist"
   gem "rspec-its"
   gem "shoulda-matchers"
+  gem "simplecov", require: false
   gem "terminal-notifier-guard"
   gem "webmock", require: false
 end

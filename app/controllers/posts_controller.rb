@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :authorize_post, only: %i[edit update destroy]
 
   expose_decorated :post, parent: :current_community
-  expose_decorated :comments, -> { post.comments.includes(:commenter) }
+  expose :comment, parent: :post, id: :comment_id
+  expose_decorated :comments, :fetch_comments
 
   def show
   end
@@ -36,6 +37,13 @@ class PostsController < ApplicationController
 
   def authorize_post
     authorize post
+  end
+
+  def fetch_comments
+    post.comments
+        .order(created_at: :desc)
+        .includes(:commenter)
+        .page(params[:page])
   end
 
   def post_params

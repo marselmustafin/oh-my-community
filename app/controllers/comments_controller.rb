@@ -11,6 +11,19 @@ class CommentsController < ApplicationController
     respond_with comment
   end
 
+  def edit
+  end
+
+  def update
+    comment.update(comment_params)
+
+    respond_with comment
+  end
+
+  def destroy
+    comment.destroy
+  end
+
   private
 
   def comment_params
