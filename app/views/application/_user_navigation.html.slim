@@ -1,4 +1,10 @@
 .justify-content-end
   - if user_signed_in?
-    = link_to "Edit Profile", edit_user_registration_path, class: "p-4 text-light"
-    = link_to "Sign out", destroy_user_session_url(subdomain: request.subdomain), class: "btn btn-outline-primary"
+    .dropdown
+      button.btn.btn-secondary.dropdown-toggle type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        = current_user.full_name
+      .dropdown-menu aria-labelledby="dropdownMenuButton"
+        - if current_user.owner?
+          = link_to "Edit Community", edit_community_path, class: "dropdown-item"
+        = link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item"
+        = link_to "Sign out", destroy_user_session_url(subdomain: request.subdomain), class: "dropdown-item"

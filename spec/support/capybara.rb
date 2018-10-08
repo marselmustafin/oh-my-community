@@ -5,7 +5,7 @@ end
 Capybara.configure do |config|
   config.match = :prefer_exact
   config.always_include_port = true
-  config.default_driver = :selenium_chrome_headless
+  config.default_driver = :selenium_chrome
   config.javascript_driver = :chrome
   config.asset_host = "http://#{ENV.fetch('HOST')}"
   config.app_host = "http://#{ENV.fetch('HOST')}"

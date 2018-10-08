@@ -8,7 +8,7 @@ end
 def generate_subdomain
   subdomain = Faker::Internet.unique.domain_word
 
-  if reserved_list.include?(subdomain)
+  if reserved_list.include?(subdomain) || subdomain.size > 20
     generate_subdomain
   else
     subdomain
