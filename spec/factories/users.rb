@@ -15,12 +15,4 @@ FactoryBot.define do
   trait :member do
     role { :member }
   end
-
-  trait :not_confirmed do
-    confirmed_at { nil }
-
-    after(:create) do |user|
-      user.update(confirmation_sent_at: 3.days.ago)
-    end
-  end
 end

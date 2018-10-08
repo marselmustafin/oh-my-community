@@ -7,6 +7,12 @@ module FeatureHelpers
     end
   end
 
+  def accept_alert
+    page.driver.browser.switch_to.alert.accept
+  end
+
+  private
+
   def using_app_host(host)
     original_host = Capybara.app_host
     Capybara.app_host = host

@@ -16,7 +16,14 @@ $(document).ready(function () {
             value: score
           }
         },
-        success: $(this).raty("readOnly", true)
+        dataType: "json",
+        success: function () {
+          $('#rating').raty("readOnly", true);
+          $('#rating-status').text("Your rating successfully submitted!")
+        },
+        error: function () {
+          $('#rating-status').text("Something went wrong!")
+        }
       })
     }
   });
