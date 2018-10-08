@@ -8,5 +8,6 @@
 //= require popper
 //= require bootstrap
 //= require jquery-ujs
+//= require trix
 //= require_tree ../templates
 //= require_tree .
