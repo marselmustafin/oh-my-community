@@ -54,15 +54,16 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara", "~> 3.7.2"
+  gem "capybara"
   gem "capybara-screenshot"
-  gem "capybara-webkit"
+  gem "chromedriver-helper"
   gem "email_spec"
   gem "formulaic"
   gem "guard-rspec"
   gem "launchy"
   gem "poltergeist"
   gem "rspec-its"
+  gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "terminal-notifier-guard"

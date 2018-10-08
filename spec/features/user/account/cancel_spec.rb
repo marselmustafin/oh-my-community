@@ -13,6 +13,8 @@ feature "Cancel Account" do
   scenario "User cancels account" do
     click_link "Cancel my account"
 
+    accept_alert
+
     expect(page).to have_content("Bye! Your account has been successfully cancelled. We hope to see you again soon.")
 
     visit_community current_community, new_user_session_path
