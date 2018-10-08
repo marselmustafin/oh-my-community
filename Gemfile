@@ -54,7 +54,7 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara", "~> 3.7.2"
+  gem "capybara"
   gem "capybara-screenshot"
   gem "chromedriver-helper"
   gem "email_spec"
