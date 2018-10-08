@@ -9,19 +9,19 @@ feature "Create Rating" do
     visit_community current_community, post_path(post)
   end
 
-  scenario "User rate some post" do
+  scenario "User rate post" do
     find("img[alt='4']").click
 
     expect(page).to have_content("Your rating successfully submitted!")
   end
 
-  context "User rated this post that he already" do
+  context "when User rated this post that he already" do
     background do
       create :rating, user: current_user, post: post, value: 3
       reload_page
     end
 
-    scenario "User try to rate post that he already rated" do
+    scenario "User rate post" do
       find("img[alt='4']").click
 
       expect(page).not_to have_content("Your rating successfully submitted!")
