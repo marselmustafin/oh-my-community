@@ -1,5 +1,5 @@
 class CommentDecorator < ApplicationDecorator
-  delegate :commenter, :content
+  delegate :id, :commenter, :content
 
   def commenter_name
     object.commenter.full_name

@@ -6,7 +6,7 @@ feature "Create Comment" do
   let!(:post) { create :post, community: current_community }
   let(:comment_content) { "Nice post!" }
 
-  scenario "User creates comment to post", :js do
+  scenario "User creates comment to post" do
     visit_community current_community, post_path(post)
 
     fill_in("Comment", with: comment_content)

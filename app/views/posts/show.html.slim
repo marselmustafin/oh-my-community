@@ -11,13 +11,17 @@ p
 - if policy(post).edit?
   = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-primary"
 
+hr
+
 - if policy(post).rate?
+  b Your rating:
   p#rating-status
   #rating data-score="#{post.user_rating_value(current_user)}" data-post-id="#{post.id}"
+  hr
 
 h2 Comments
-hr
 = render "comments/form"
 
 #post-comments
   = render comments
+  = paginate comments

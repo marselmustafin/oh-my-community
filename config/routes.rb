@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     authenticated :user do
       resources :posts, except: :index do
-        resources :comments, only: %i[create update destroy]
+        resources :comments, except: %i[index show]
         resources :ratings, only: :create
       end
 
