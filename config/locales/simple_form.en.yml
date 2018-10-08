@@ -19,6 +19,8 @@ en:
       community:
         name: "Community Name"
         subdomain: "Community Subdomain"
+      post:
+        title: "Title"
     hints:
       community:
         subdomain: "Use only lowercase letters, numbers and dashes."

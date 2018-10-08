@@ -10,6 +10,10 @@ class PostDecorator < ApplicationDecorator
     object.author.full_name
   end
 
+  def reading_time
+    object.text.reading_time(format: :approx)
+  end
+
   def created_at
     object.created_at.strftime("%a %m/%d/%y")
   end
