@@ -11,6 +11,10 @@ module FeatureHelpers
     page.driver.browser.switch_to.alert.accept
   end
 
+  def reload_page
+    page.driver.browser.navigate.refresh
+  end
+
   private
 
   def using_app_host(host)
