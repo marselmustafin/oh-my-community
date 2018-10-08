@@ -5,6 +5,15 @@ class CommunitiesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    current_community.update(community_params)
+
+    respond_with current_community
+  end
+
   private
 
   def fetch_posts
@@ -15,5 +24,9 @@ class CommunitiesController < ApplicationController
 
   def fetch_top_authors
     current_community.users.order(rating: :desc).limit(3)
+  end
+
+  def community_params
+    params.require(:community).permit(:name, :subdomain, :description)
   end
 end
