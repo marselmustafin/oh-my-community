@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match "(*any)", to: redirect(subdomain: ""), via: :all, constraints: { subdomain: "www" }
+
   mount RailsAdmin::Engine => "/admin_dashboard", as: "rails_admin"
 
   devise_for :admins

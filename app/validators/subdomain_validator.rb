@@ -1,5 +1,5 @@
 class SubdomainValidator < ActiveModel::EachValidator
-  SUBDOMAIN_REGEXP = /^[a-z0-9\-]+$/
+  SUBDOMAIN_REGEXP = /^[a-z\d\-]+$/
 
   def validate_each(record, attribute, value)
     validate_reserving(record, attribute, value)
