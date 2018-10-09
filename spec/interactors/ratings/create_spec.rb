@@ -1,11 +1,18 @@
 require "rails_helper"
 
 describe Ratings::Create do
-  subject(:create_rating) { described_class.call(post: post, user: user, params: params) }
+  subject(:create_rating) { described_class.call(params: params) }
 
   let(:post) { create :post }
   let(:user) { create :user }
-  let(:params) { { value: 3 } }
+
+  let(:params) do
+    {
+      value: 3,
+      user: user,
+      post: post
+    }
+  end
 
   describe ".call" do
     it "creates new rating from user for post with specified value" do

@@ -10,10 +10,12 @@ class RatingsController < ApplicationController
   private
 
   def approve_rating
-    @approve_rating ||= Ratings::Rate.call(post: post, user: current_user, params: rating_params)
+    @approve_rating ||= Ratings::Rate.call(params: rating_params)
   end
 
   def rating_params
-    params.require(:rating).permit(:value)
+    params.require(:rating)
+          .permit(:value)
+          .merge(user: current_user, post: post)
   end
 end

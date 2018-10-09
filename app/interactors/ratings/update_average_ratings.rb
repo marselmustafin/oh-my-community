@@ -2,7 +2,8 @@ module Ratings
   class UpdateAverageRatings
     include Interactor
 
-    delegate :rating, :post, to: :context
+    delegate :rating, to: :context
+    delegate :post, to: :rating
     delegate :author, to: :post, prefix: true
 
     def call
