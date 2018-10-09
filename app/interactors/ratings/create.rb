@@ -2,21 +2,21 @@ module Ratings
   class Create
     include Interactor
 
-    delegate :params, :post, :user, to: :context
+    delegate :params, to: :context
 
     def call
       context.fail!(error: rating.errors) if rating.invalid?
       context.rating = rating
     end
 
+    def rollback
+      rating.destroy
+    end
+
     private
 
     def rating
-      @rating ||= Rating.create(prepared_params)
-    end
-
-    def prepared_params
-      params.merge(post: post, user: user)
+      @rating ||= Rating.create(params)
     end
   end
 end
