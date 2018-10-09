@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Ratings::UpdateAverageRatings do
-  subject(:update_average_ratings) { described_class.call(post: post, rating: rating) }
+  subject(:update_average_ratings) { described_class.call(rating: rating) }
 
   let(:author) { create :user, rating: 3.0 }
 
