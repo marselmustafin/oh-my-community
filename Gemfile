@@ -44,10 +44,12 @@ gem "pundit"
 gem "rack-canonical-host"
 gem "rack-mini-profiler", require: false, git: "https://github.com/MiniProfiler/rack-mini-profiler.git"
 gem "rails_admin"
+gem "readingtime"
 gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
+gem "trix"
 
 group :staging, :production do
   gem "newrelic_rpm"

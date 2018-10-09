@@ -354,6 +354,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    readingtime (0.4.0)
     remotipart (1.4.2)
     request_store (1.4.1)
       rack (>= 1.4)
@@ -465,6 +466,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    trix (0.10.1)
+      rails
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.19)
@@ -544,6 +547,7 @@ DEPENDENCIES
   rails-assets-jquery-ujs!
   rails-erd
   rails_admin
+  readingtime
   responders
   rollbar
   rspec-its
@@ -565,6 +569,7 @@ DEPENDENCIES
   spring-watcher-listen
   stackprof
   terminal-notifier-guard
+  trix
   uglifier (>= 2.7.2)
   web-console
   webmock
