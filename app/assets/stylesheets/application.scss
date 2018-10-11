@@ -5,6 +5,7 @@
 
 $bg-color: #eee;
 $container-bg-color: #fff;
+$reviews-color: #555;
 
 body {
   background-color: $bg-color;
@@ -15,9 +16,9 @@ body {
 }
 
 .thumbnail {
-  height: auto;
   width: auto;
   max-width: 344px;
+  height: auto;
   max-height: 225px;
 }
 
@@ -27,16 +28,16 @@ body {
 
 .media-date {
   position: absolute;
-  right: 25px;
   top: 25px;
+  right: 25px;
 }
 
 .media-object { max-width: 100px; }
 .media-object-sm { max-width: 64px; }
 
 .reviews {
-    color: #555;
-    font-weight: bold;
-    margin: 10px auto 20px;
+  margin: 10px auto 20px;
+  color: $reviews-color;
+  font-weight: bold;
 }
 
