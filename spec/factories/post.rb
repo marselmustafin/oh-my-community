@@ -3,6 +3,6 @@ FactoryBot.define do
     author
     community
     title { Faker::Company.name }
-    text { Faker::Lorem.sentence(15) }
+    text { Faker::Lorem.paragraph(50, true, 4) }
   end
 end

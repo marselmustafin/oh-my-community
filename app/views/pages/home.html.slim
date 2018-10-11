@@ -18,8 +18,8 @@ main role="main"
         .row
           - communities.each do |community|
             .col-md-4
-              .card.mb-6.shadow-sm.thumbnail
-                = image_tag community.thumbnail
+              .card.mb-6.shadow-sm
+                = image_tag community.thumbnail, class: :thumbnail
                 / = image_tag community.image.variant(resize: "342x225")
                 .card-body
                   h3 = community.name
@@ -27,4 +27,5 @@ main role="main"
                   .d-flex.justify-content-between.align-items-center
                     = button_to "View", root_url(subdomain: community.subdomain),
                       method: :get, class: "btn btn-sm btn-outline-secondary"
-                    small.text-muted 9 mins
+                    small.text-muted
+                      = community.users_count

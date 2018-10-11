@@ -4,7 +4,7 @@ feature "Create Post" do
   include_context "current user signed in"
 
   let(:title) { "My Story" }
-  let(:text) { "Today was a good day" }
+  let(:text) { attributes_for(:post).slice(:text) }
 
   def fill_trix_form_with(text)
     find("trix-editor").click.set(text)

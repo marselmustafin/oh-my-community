@@ -1,5 +1,6 @@
-li[class="#{"current" if page.current?}"]
+li class="#{"active" if page.current?} page-item"
   = link_to(page,
             page.current? ? "#" : url,
             remote: remote,
+            class: "page-link",
             rel: page.next? ? "next" : (page.prev? ? "prev" : nil))

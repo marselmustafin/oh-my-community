@@ -1,6 +1,7 @@
-li
-  = link_to_unless(current_page.first?,
-                   raw(t("views.pagination.previous")),
-                   url,
-                   rel: "prev",
-                   remote: remote)
+li class="#{"disabled " if current_page.first?}page-item"
+  span.page-link
+    = link_to_unless(current_page.first?,
+                    raw(t("views.pagination.previous")),
+                    url,
+                    rel: "prev",
+                    remote: remote)
