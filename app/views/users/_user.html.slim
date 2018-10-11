@@ -1,6 +1,11 @@
-.row
-  li = user.full_name
-  ' | Rating
-  = user.rating
-  ' | Posts count
-  = user.posts_count
+.media
+  = image_tag user.avatar, class: "m-3 media-object rounded-circle"
+  .media-body
+    .card-title
+      = user.full_name
+    p
+      ' Rating
+      = user.rating
+    p
+      ' Posts count
+      = user.posts_count

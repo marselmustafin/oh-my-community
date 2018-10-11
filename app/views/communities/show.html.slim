@@ -1,9 +1,10 @@
 .text-center
   h1 = current_community.name
-
   h2 Top 3 authors:
-  = render authors
-  = button_to "Show all", users_path, method: :get, class: "btn btn-default btn-sm"
+  .card
+    .row
+      = render authors
+    = button_to "Show all", users_path, method: :get, class: "btn btn-default btn-sm"
 
   = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary"
 
@@ -14,4 +15,5 @@
 - else
   .row
     = render posts
+  .d-flex.justify-content-center.m-5
     = paginate posts
