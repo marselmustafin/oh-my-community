@@ -12,7 +12,7 @@
     | read
   p
     - if policy(post).edit?
-    = button_to 'Edit post', edit_post_path(post), method: :get, class: "btn btn-outline-secondary btn-sm"
+      = button_to 'Edit post', edit_post_path(post), method: :get, class: "btn btn-outline-secondary btn-sm"
 hr
 p
   = sanitize post.text
