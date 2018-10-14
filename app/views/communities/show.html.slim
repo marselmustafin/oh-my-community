@@ -2,13 +2,13 @@
   h1 = current_community.name
   h2 Top 3 authors:
   .card
-    .row
+    .row.justify-content-center
       = render authors
-    = button_to "Show all", users_path, method: :get, class: "btn btn-default btn-sm"
+    = button_to "Show all", users_path, method: :get, class: "btn btn-outline-secondary btn-sm m-3"
 
-  = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary"
+  = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary m-3"
 
-  h2 Recent posts
+  h1 Recent posts
 
 - if posts.empty?
   p There is no posts yet:(

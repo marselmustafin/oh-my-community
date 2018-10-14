@@ -1,7 +1,7 @@
 class PostDecorator < ApplicationDecorator
   delegate :id, :author, :title, :text, :ratings, :comments, :average_rating
 
-  TRUNCATION_SIZE = 200
+  TRUNCATION_SIZE = 180
 
   def user_rating_value(user_id)
     rating = object.ratings.find_by(user_id: user_id)
