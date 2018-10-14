@@ -2,11 +2,12 @@ h1 Editing post
 
 == render 'form'
 
-= link_to "Delete post",
-    post,
-    class: "btn btn-danger btn-sm",
-    data: { confirm: "Are you sure?" },
-    method: :delete
-
-= link_to 'Back', post
+.text-center
+  = link_to "Delete post",
+  post,
+  class: "btn btn-outline-danger btn-sm m-2",
+  data: { confirm: "Are you sure?" },
+  method: :delete
+  hr
+  = button_to 'Back', post, class: "btn btn-outline-secondary btn-sm m-3", method: :get
 

@@ -2,7 +2,7 @@ main role="main"
   section.jumbotron.text-center
     .container
       h1.jumbotron-heading Create your own community
-      p.lead.text-muted Create own space for youself and your adherent, where you be able to share your knowledge
+      p.lead.text-muted Create own space for youself and your adherents, where you be able to share your knowledges
       p
         = button_to "Create community", new_user_registration_path,
           class: "btn btn-primary btn-lg my-2", method: :get
@@ -20,7 +20,6 @@ main role="main"
             .col-md-4
               .card.mb-6.shadow-sm
                 = image_tag community.thumbnail, class: :thumbnail
-                / = image_tag community.image.variant(resize: "342x225")
                 .card-body
                   h3 = community.name
                   p.card-text = community.description

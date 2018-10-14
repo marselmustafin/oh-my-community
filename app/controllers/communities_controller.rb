@@ -11,7 +11,7 @@ class CommunitiesController < ApplicationController
   def update
     current_community.update(community_params)
 
-    respond_with current_community
+    respond_with current_community, location: root_path
   end
 
   private
@@ -27,6 +27,6 @@ class CommunitiesController < ApplicationController
   end
 
   def community_params
-    params.require(:community).permit(:name, :subdomain, :description)
+    params.require(:community).permit(:name, :subdomain, :description, :image)
   end
 end

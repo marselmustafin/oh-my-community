@@ -7,8 +7,17 @@ $bg-color: #eee;
 $container-bg-color: #fff;
 $reviews-color: #555;
 
+
 body {
   background-color: $bg-color;
+}
+
+.avatar-sm { max-width: 32px; }
+
+.jumbotron {
+  background-image: asset_url("home-image.jpg");
+  background-position: 0% 40%;
+  background-size: cover;
 }
 
 .main-container {
@@ -40,4 +49,3 @@ body {
   color: $reviews-color;
   font-weight: bold;
 }
-
