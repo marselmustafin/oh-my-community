@@ -1,7 +1,8 @@
 .text-center
   = simple_form_for current_community, url: community_path, html: { class: "user-form" } do |f|
     h1.h3.mb-3.font-weight-normal Edit Community
-    = f.input :image
+    = image_tag current_community.thumbnail, id: "img_prev"
+    = f.input :image, input_html: { onchange: "readURL(this)" }
     = f.input :name, label: false, required: true
     = f.input :subdomain, label: false, required: true
     = f.input :description, label: false, required: true
