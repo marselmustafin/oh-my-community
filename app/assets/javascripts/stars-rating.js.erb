@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $('#rating').raty({
-    path: "/assets/",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starOn: "<%= asset_path('star-on.png') %>",
     readOnly: function () {
       return $(this).attr("data-score") != 0;
     },
