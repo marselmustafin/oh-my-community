@@ -2,7 +2,7 @@ class UserDecorator < ApplicationDecorator
   delegate :id, :full_name, :email, :posts_count, :owner?
 
   def avatar
-    "default-avatar.jpeg"
+    object.avatar.attached? ? object.avatar : "default-avatar.jpg"
   end
 
   def rating

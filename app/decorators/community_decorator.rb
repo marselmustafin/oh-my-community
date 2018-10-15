@@ -4,7 +4,7 @@ class CommunityDecorator < ApplicationDecorator
   delegate :id, :name, :subdomain, :description
 
   def thumbnail
-    "no-thumbnail.jpg"
+    object.image.attached? ? object.image.variant(resize: "342x225") : "no-thumbnail.jpg"
   end
 
   def users_count

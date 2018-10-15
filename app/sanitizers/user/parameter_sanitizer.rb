@@ -6,6 +6,7 @@ class User
       password
       password_confirmation
       role
+      avatar
     ].freeze
 
     COMMUNITY_PARAMS = %i[name subdomain].freeze

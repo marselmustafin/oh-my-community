@@ -26,6 +26,7 @@ gem "simple_form"
 gem "slim"
 
 # all other gems
+gem "aws-sdk-s3", require: false
 gem "decent_decoration"
 gem "decent_exposure"
 gem "devise"
@@ -38,6 +39,7 @@ gem "interactor"
 gem "interactor-rails"
 gem "kaminari"
 gem "memory_profiler"
+gem "mini_magick"
 gem "pg_search"
 gem "puma"
 gem "pundit"
