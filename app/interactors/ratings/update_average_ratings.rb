@@ -18,11 +18,11 @@ module Ratings
     private
 
     def post_avg_rating
-      @post_avg_rating ||= post.ratings.average(:value)
+      @post_avg_rating ||= post.ratings.average(:value).to_f
     end
 
     def author_avg_rating
-      @author_avg_rating ||= post_author.posts.average(:average_rating)
+      @author_avg_rating ||= post_author.posts.average(:average_rating).to_f
     end
   end
 end
