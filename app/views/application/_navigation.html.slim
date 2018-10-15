@@ -5,6 +5,6 @@ header
       = link_to "Oh My Community", root_url(subdomain: request.subdomain),
         class: "navbar-brand d-flex align-items-center"
       - if user_signed_in?
-        button.navbar-toggler{ aria-controls="navbarHeader" aria-expanded="false"
+        button.navbar-toggler{ aria-controls="navbarHeader" aria-expanded="false" id="hidden-header-toggler"
           aria-label=("Toggle navigation") data-target="#navbarHeader" data-toggle="collapse" type="button" }
           span.navbar-toggler-icon
