@@ -1,17 +1,17 @@
-li.media id="comment#{comment.id}"
+li.container-fluid.media id="comment#{comment.id}"
   = image_tag comment.commenter.avatar, class: "media-object-sm rounded-circle align-self-start mr-3"
   .media-body.p-3
     .media-heading.text-uppercase.reviews
       = comment.commenter_name
-    .media-date.text-uppercase.reviews.list-inline
-      = comment.created_at
     p.card-text
       = comment.content
-    .row
-      - if policy(comment).edit?
-        = button_to "Edit", edit_post_comment_path(post, comment),
-          method: :get, remote: true, class: "btn btn-default btn-sm m-2"
-      - if policy(comment).destroy?
-        = button_to "Destroy", post_comment_path(post, comment), method: :delete, remote: true,
-          data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm m-2"
+      .row
+        - if policy(comment).edit?
+          = button_to "Edit", edit_post_comment_path(post, comment),
+            method: :get, remote: true, class: "btn btn-default btn-sm m-2"
+        - if policy(comment).destroy?
+          = button_to "Destroy", post_comment_path(post, comment), method: :delete, remote: true,
+            data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm m-2"
+    .media-date.text-uppercase.reviews.text-right
+      = comment.created_at
     hr

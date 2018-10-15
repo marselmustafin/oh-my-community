@@ -1,0 +1,17 @@
+#navbarHeader.collapse.bg-dark
+    .container
+      .row
+        .col-sm-4.col-md-7.py-4
+          h4.text-white Description
+          p.text-muted
+            = current_community.description
+        .col-sm-4.offset-md-1.py-4
+          h4.text-white = current_user.full_name
+          ul.list-unstyled
+            - if current_user.owner?
+              li
+                = link_to "Edit Community", edit_community_path, class: "text-white"
+            li
+              = link_to "Edit Profile", edit_user_registration_path, class: "text-white"
+            li
+              = link_to "Sign out", destroy_user_session_url(subdomain: request.subdomain), class: "text-white"

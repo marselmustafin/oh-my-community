@@ -9,5 +9,6 @@
 //= require bootstrap
 //= require jquery-ujs
 //= require trix
+//= require jquery.raty
 //= require_tree ../templates
 //= require_tree .

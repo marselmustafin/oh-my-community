@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $('#rating').raty({
-    path: "/assets",
+    path: "/assets/",
     readOnly: function () {
       return $(this).attr("data-score") != 0;
     },

@@ -1,11 +1,12 @@
-.media
+.container-fluid.media
   = image_tag user.avatar, class: "m-3 media-object rounded-circle"
-  .media-body
-    .card-title
+  .media-body.p-3
+    .media-heading.text-uppercase.reviews
       = user.full_name
-    p
+    p.card-text
       ' Rating
       = user.rating
-    p
+      span>
       ' Posts count
       = user.posts_count
+hr
