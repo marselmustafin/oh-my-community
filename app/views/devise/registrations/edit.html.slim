@@ -2,7 +2,7 @@
   = simple_form_for resource, as: resource_name, url: registration_path(resource_name),
       html: { method: :put, class: "user-form" }, defaults: { input_html: { class: "form-control" } } do |f|
       h1.h3.mb-3.font-weight-normal Edit Account
-      = image_tag resource.avatar, id: "img_prev", class: "media-object rounded-circle"
+      = image_tag resource.decorate.avatar, id: "img_prev", class: "media-object rounded-circle"
       = f.input :avatar, input_html: { class: nil, onchange: "readURL(this)" }
       = f.input :full_name, label: false, required: true, autofocus: true
       = f.input :email, required: true, label: false
