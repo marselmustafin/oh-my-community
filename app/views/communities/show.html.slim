@@ -1,14 +1,25 @@
 .text-center
   h1 = current_community.name
-  h2 Top 3 authors:
-  .card
-    .row.justify-content-center
-      = render authors
-    = button_to "Show all", users_path, method: :get, class: "btn btn-outline-secondary btn-sm m-3"
+  = button_to "Show all users", users_path, method: :get, class: "btn btn-outline-secondary btn-sm m-3"
 
+/ .container
+/   h2 Top 3 authors:
+/   .row
+/     - authors.each do |author|
+/       .media.card
+/         = image_tag author.avatar, class: "m-3 media-object rounded-circle avatar-sm"
+/         .media-body.text-center
+/             b
+/               = author.full_name
+/             p
+/               ' Rating
+/               = author.rating
+.text-center
   = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary m-3"
 
-  h1 Recent posts
+  hr
+
+  h1.m-4 Recent posts
 
 - if posts.empty?
   p There is no posts yet:(

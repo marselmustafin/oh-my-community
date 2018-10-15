@@ -11,7 +11,7 @@ feature "Cancel Account" do
   let(:password) { current_user.password }
 
   scenario "User cancels account" do
-    click_link "Cancel my account"
+    click_button "Cancel my account"
 
     accept_alert
 

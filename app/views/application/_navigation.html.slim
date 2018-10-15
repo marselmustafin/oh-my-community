@@ -1,11 +1,10 @@
 header
-  = render "hidden_header" if current_community.present?
+  = render "hidden_header" if user_signed_in?
   .navbar.navbar-dark.bg-dark.shadow-sm
     .container.d-flex.justify-content-between
       = link_to "Oh My Community", root_url(subdomain: request.subdomain),
         class: "navbar-brand d-flex align-items-center"
-      - if current_community.present?
-        button.navbar-toggler{ aria-controls="navbarHeader" aria-expanded="false"
+      - if user_signed_in?
+        button.navbar-toggler{ aria-controls="navbarHeader" aria-expanded="false" id="hidden-header-toggler"
           aria-label=("Toggle navigation") data-target="#navbarHeader" data-toggle="collapse" type="button" }
           span.navbar-toggler-icon
-    = render "user_navigation"

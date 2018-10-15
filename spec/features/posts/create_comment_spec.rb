@@ -12,7 +12,7 @@ feature "Create Comment" do
     fill_in("Comment", with: comment_content)
     click_on "Create Comment"
 
-    expect(page).to have_content(current_user.full_name)
+    expect(page).to have_content(current_user.full_name.upcase)
     expect(page).to have_content(comment_content)
   end
 end

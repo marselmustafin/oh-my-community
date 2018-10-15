@@ -7,6 +7,6 @@ class CommentDecorator < ApplicationDecorator
   end
 
   def created_at
-    object.created_at.strftime("%a %m/%d/%y")
+    object.created_at.strftime("%m-%d-%y %H:%M")
   end
 end
