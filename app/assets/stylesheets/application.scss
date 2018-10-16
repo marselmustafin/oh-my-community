@@ -14,11 +14,9 @@ body {
 
 .avatar-sm { max-width: 32px; }
 
-// .jumbotron {
-//   background-image: asset_url("home-image.jpg");
-//   background-position: 0% 40%;
-//   background-size: cover;
-// }
+.post-text {
+  word-break: break-all;
+}
 
 .main-container {
   background-color: $container-bg-color;

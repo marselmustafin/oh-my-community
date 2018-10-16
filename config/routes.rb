@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         resources :ratings, only: :create
       end
 
-      resource :community, only: %i[show edit update]
+      resource :community, only: %i[show edit update destroy]
       resources :users, only: :index
 
       root "communities#show"
