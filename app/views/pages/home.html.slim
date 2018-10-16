@@ -19,7 +19,7 @@ main role="main"
           - communities.each do |community|
             .col-md-4
               .card.mb-6.shadow-sm
-                = image_tag community.thumbnail, class: :thumbnail
+                = image_tag community.thumbnail, class: "thumbnail"
                 .card-body
                   h3 = community.name
                   p.card-text = community.description

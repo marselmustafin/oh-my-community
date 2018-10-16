@@ -1,9 +1,18 @@
 .text-center
   = simple_form_for current_community, url: community_path, html: { class: "user-form" } do |f|
     h1.h3.mb-3.font-weight-normal Edit Community
-    = image_tag current_community.thumbnail, id: "img_prev"
+    .d-flex.justify-content-center
+      = image_tag current_community.thumbnail, id: "img_prev", class: "thumbnail"
     = f.input :image, input_html: { onchange: "readURL(this)" }
     = f.input :name, label: false, required: true
     = f.input :subdomain, label: false, required: true
     = f.input :description, label: false, required: true
     = f.button :submit, class: "btn btn-lg btn-primary btn-block"
+
+    hr
+
+    = link_to "Delete community",
+    current_community,
+    class: "btn btn-outline-danger btn-sm m-2",
+    data: { confirm: "Are you sure? This action will delete all comunity posts and accounts (including yours)" },
+    method: :delete
