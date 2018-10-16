@@ -7,7 +7,10 @@ class UsersController < ApplicationController
   private
 
   def fetch_users
-    Users::SortedQuery.new(sorting_params[:sorting], filtered_users).all.page(params[:page])
+    Users::SortedQuery.new(sorting_params[:sorting], filtered_users)
+                      .all
+                      .with_attached_avatar
+                      .page(params[:page])
   end
 
   def filtered_users
