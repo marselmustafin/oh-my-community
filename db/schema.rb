@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_13_064652) do
+ActiveRecord::Schema.define(version: 2018_10_19_101833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -113,9 +113,18 @@ ActiveRecord::Schema.define(version: 2018_10_13_064652) do
     t.datetime "updated_at", null: false
     t.integer "posts_count", default: 0, null: false
     t.float "rating", default: 0.0, null: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.index ["community_id"], name: "index_users_on_community_id"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email", "community_id"], name: "index_users_on_email_and_community_id", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   add_foreign_key "ratings", "posts"

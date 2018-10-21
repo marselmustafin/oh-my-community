@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   include PgSearch
 
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, request_keys: [:subdomain]
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable,
+    :rememberable, :trackable, :lockable, request_keys: [:subdomain]
 
   belongs_to :community
   has_many :posts, foreign_key: "author_id", inverse_of: :author, dependent: :destroy
