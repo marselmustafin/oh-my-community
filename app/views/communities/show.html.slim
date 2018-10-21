@@ -22,9 +22,10 @@
   h1.m-4 Recent posts
 
 - if posts.empty?
-  p There is no posts yet:(
+  .text-center
+    p There is no posts yet:(
+  br
 - else
-  .row
-    = render posts
+  = render posts
   .d-flex.justify-content-center.m-5
     = paginate posts

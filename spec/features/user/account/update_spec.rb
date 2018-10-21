@@ -13,7 +13,6 @@ feature "Update Account" do
 
   scenario "User updates account with valid data" do
     fill_in("Full Name", with: full_name)
-    fill_in("Email", with: email)
     fill_in("Password", with: password)
     click_on "Update"
 

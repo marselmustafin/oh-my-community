@@ -1,5 +1,5 @@
 class UserDecorator < ApplicationDecorator
-  delegate :id, :full_name, :email, :posts_count, :owner?
+  delegate :id, :full_name, :email, :community, :posts_count, :owner?
 
   def avatar
     object.avatar.attached? ? object.avatar : "default-avatar.jpg"

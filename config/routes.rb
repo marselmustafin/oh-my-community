@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }, skip: %i[session password]
 
   constraints CommunitySubdomainConstraint do
-    devise_for :users, controllers: { registrations: "users/registrations" }
+    devise_for :users,
+      controllers: { registrations: "users/registrations", confirmations: "users/confirmations" }
 
     authenticated :user do
       resources :posts, except: :index do
