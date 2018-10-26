@@ -1,5 +1,5 @@
 class CommunitySubdomainConstraint
-  RESERVED_SUBDOMAINS = YAML.load_file(Rails.root.join("app", "validators", "reserved-subdomains.yaml"))
+  RESERVED_SUBDOMAINS = %w[www].freeze
 
   def self.matches?(request)
     request.subdomain.present? && !RESERVED_SUBDOMAINS.include?(request.subdomain)
