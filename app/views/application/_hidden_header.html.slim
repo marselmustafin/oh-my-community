@@ -14,4 +14,7 @@
             li
               = link_to "Edit Profile", edit_user_registration_path, class: "text-white"
             li
+              = link_to "Invite Friend", new_user_invitation_path, class: "text-white"
+            li
               = link_to "Sign out", destroy_user_session_url(subdomain: request.subdomain), class: "text-white"
+

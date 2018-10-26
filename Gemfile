@@ -30,6 +30,7 @@ gem "aws-sdk-s3", require: false
 gem "decent_decoration"
 gem "decent_exposure"
 gem "devise"
+gem "devise_invitable", "~> 1.7.0"
 gem "draper"
 gem "flamegraph"
 gem "google-analytics-rails"

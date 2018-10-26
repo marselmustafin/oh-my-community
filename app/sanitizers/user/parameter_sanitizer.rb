@@ -14,6 +14,7 @@ class User
     def initialize(*)
       super
       permit(:sign_up, keys: USER_PARAMS + [{ community_attributes: COMMUNITY_PARAMS }])
+      permit(:accept_invitation, keys: USER_PARAMS)
       permit(:account_update, keys: USER_PARAMS)
     end
   end
