@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_135933) do
+ActiveRecord::Schema.define(version: 2018_10_26_093938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_135933) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.bigint "post_id"
+    t.bigint "post_id", null: false
     t.bigint "user_id"
     t.integer "value", null: false
     t.datetime "created_at", null: false
@@ -139,6 +139,10 @@ ActiveRecord::Schema.define(version: 2018_10_25_135933) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  add_foreign_key "ratings", "posts"
-  add_foreign_key "ratings", "users"
+  add_foreign_key "comments", "posts", on_delete: :cascade
+  add_foreign_key "comments", "users", column: "commenter_id", on_delete: :cascade
+  add_foreign_key "posts", "communities", on_delete: :cascade
+  add_foreign_key "ratings", "posts", on_delete: :cascade
+  add_foreign_key "ratings", "users", on_delete: :nullify
+  add_foreign_key "users", "communities", on_delete: :cascade
 end
