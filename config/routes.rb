@@ -22,7 +22,7 @@ Rails.application.routes.draw do
         resources :ratings, only: :create
       end
 
-      resource :community, only: %i[show edit update destroy]
+      resource :community, except: %i[new create index]
       resources :users, only: :index
 
       root "communities#show"
