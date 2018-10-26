@@ -4,11 +4,17 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => "/admin_dashboard", as: "rails_admin"
 
   devise_for :admins
-  devise_for :users, controllers: { registrations: "users/registrations" }, skip: %i[session password]
+  devise_for :users,
+    controllers: { registrations: "users/registrations" },
+    skip: %i[session password invitation]
 
   constraints CommunitySubdomainConstraint do
     devise_for :users,
-      controllers: { registrations: "users/registrations", confirmations: "users/confirmations" }
+      controllers: {
+        registrations: "users/registrations",
+        confirmations: "users/confirmations",
+        invitations: "users/invitations"
+      }
 
     authenticated :user do
       resources :posts, except: :index do
@@ -16,7 +22,7 @@ Rails.application.routes.draw do
         resources :ratings, only: :create
       end
 
-      resource :community, only: %i[show edit update destroy]
+      resource :community, except: %i[new create index]
       resources :users, only: :index
 
       root "communities#show"

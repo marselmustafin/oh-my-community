@@ -2,7 +2,7 @@ class User < ApplicationRecord
   include PgSearch
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable,
-    :rememberable, :trackable, :lockable, request_keys: [:subdomain]
+    :rememberable, :trackable, :lockable, :invitable, request_keys: [:subdomain]
 
   belongs_to :community
   has_many :posts, foreign_key: "author_id", inverse_of: :author, dependent: :destroy
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :password, presence: true, if: :password_required?
   validates :password, confirmation: true, if: :password_required?
   validates :password, length: { within: Devise.password_length }, allow_blank: true
-  validates :full_name, presence: true
+  validates :full_name, presence: true, length: { minimum: 5, maximum: 256 }
 
   delegate :subdomain, to: :community, prefix: true
 

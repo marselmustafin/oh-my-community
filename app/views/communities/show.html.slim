@@ -26,6 +26,7 @@
     p There is no posts yet:(
   br
 - else
-  = render posts
+  .row
+    = render posts
   .d-flex.justify-content-center.m-5
     = paginate posts
