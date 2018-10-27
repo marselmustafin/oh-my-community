@@ -1,20 +1,20 @@
 en:
   active_record:
     models:
-      user: User
+      admin: Admin
     attributes:
-      user:
+      admin:
         full_name: Full Name
   simple_form:
     labels:
-      user:
+      admin:
         new:
           email: Enter your email address
         edit:
           password: Enter new password
           password_confirmation: Confirm your new password
     hints:
-      user:
+      admin:
         edit:
           password: Leave it blank if you dont want to change it
           current_password: We need your current password to confirm your changes

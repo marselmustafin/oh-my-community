@@ -13,6 +13,6 @@ feature "Sign Out" do
     click_hidden_header_toggler
     click_link "Sign out"
 
-    expect(page).to have_content("Signed out")
+    expect(page).to have_content("Signed out successfully.")
   end
 end

@@ -16,6 +16,11 @@ en:
         email: "Email"
         password: "Password"
         password_confirmation: "Password Confirmation"
+      admin:
+        full_name: "Full Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       community:
         name: "Community Name"
         subdomain: "Community Subdomain"
