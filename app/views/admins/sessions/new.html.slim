@@ -1,0 +1,11 @@
+.text-center
+  = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "user-form" } do |f|
+    .form-inputs
+      h1.h3.mb-3.font-weight-normal Sign in
+      = f.input :email, required: true, label: false, autofocus: true, input_html: { class: "form-control" }
+      = f.input :password, required: true, label: false, input_html: { class: "form-control" }
+      = f.input :remember_me, as: :boolean
+      = f.button :submit, "Sign in", class: "btn btn-lg btn-primary btn-block"
+  ul.list-unstyled
+    li = link_to "Forgot your password?", new_password_path(resource_name)
+  br

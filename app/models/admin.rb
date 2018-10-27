@@ -1,3 +1,4 @@
 class Admin < ApplicationRecord
-  devise :database_authenticatable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :recoverable, :rememberable, :validatable,
+    :trackable
 end

@@ -23,7 +23,7 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.model "User" do
-    include_fields :full_name, :email, :password, :password_confirmation, :community
+    include_fields :full_name, :email, :password, :password_confirmation
   end
 
   config.actions do
