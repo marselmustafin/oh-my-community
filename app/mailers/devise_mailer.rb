@@ -5,6 +5,6 @@ class DeviseMailer < Devise::Mailer
 
   def initialize_from_record(record)
     super
-    instance_variable_set("@#{devise_mapping.name}", record.decorate)
+    instance_variable_set("@#{devise_mapping.name}", record.decorate) unless record.class == Admin
   end
 end
