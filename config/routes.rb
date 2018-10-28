@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   devise_for :admins
   devise_for :users,
-    controllers: { registrations: "users/registrations" },
+    controllers: {
+      registrations: "users/registrations",
+      omniauth_callbacks: "users/omniauth_callbacks"
+    },
     skip: %i[session password invitation]
 
   constraints CommunitySubdomainConstraint do
@@ -14,7 +17,8 @@ Rails.application.routes.draw do
         registrations: "users/registrations",
         confirmations: "users/confirmations",
         invitations: "users/invitations"
-      }
+      },
+      skip: %i[omniauth_callbacks]
 
     authenticated :user do
       resources :posts, except: :index do
