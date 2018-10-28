@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_26_093938) do
+ActiveRecord::Schema.define(version: 2018_10_27_073143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -128,6 +128,8 @@ ActiveRecord::Schema.define(version: 2018_10_26_093938) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "provider"
+    t.string "uid"
     t.index ["community_id"], name: "index_users_on_community_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email", "community_id"], name: "index_users_on_email_and_community_id", unique: true

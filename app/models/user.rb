@@ -2,7 +2,8 @@ class User < ApplicationRecord
   include PgSearch
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable,
-    :rememberable, :trackable, :lockable, :invitable, request_keys: [:subdomain]
+    :rememberable, :trackable, :lockable, :invitable, :omniauthable,
+    omniauth_providers: [:google_oauth2], request_keys: [:subdomain]
 
   belongs_to :community
   has_many :posts, foreign_key: "author_id", inverse_of: :author, dependent: :destroy
@@ -36,9 +37,18 @@ class User < ApplicationRecord
     )
   end
 
+  def self.from_omniauth(auth, community_id)
+    find_or_create_by!(provider: auth.provider, uid: auth.uid, community_id: community_id) do |user|
+      user.full_name = auth.info.name
+      user.email = auth.info.email
+      user.avatar.attach(io: URI.parse(auth.info.image).open, filename: "photo.jpg")
+      user.skip_confirmation!
+    end
+  end
+
   private
 
   def password_required?
-    !persisted? || !password.nil? || !password_confirmation.nil?
+    (provider.blank? || uid.blank?) && (!persisted? || !password.nil? || !password_confirmation.nil?)
   end
 end
