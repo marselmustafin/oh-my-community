@@ -8,4 +8,9 @@
     = f.button :submit, "Sign in", class: "btn btn-lg btn-primary btn-block"
 
   = render "users/shared/links"
-  br
+  hr
+  p.text-muted
+    | Or you can...
+  = link_to user_google_oauth2_omniauth_authorize_url(subdomain: "",
+      community_id: current_community.id, community_subdomain: current_community.subdomain) do
+    = image_tag "btn_google.png", class: "mb-3"
