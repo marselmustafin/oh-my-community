@@ -1,9 +1,11 @@
 .text-center
-  h1 = current_community.name
+  .container.border.rounded
+    h1.m-3 = current_community.name
 
-  = image_tag current_community.thumbnail, class: "m-3"
+    = image_tag current_community.thumbnail, class: "m-3 border rounded"
 
-  p = current_community.description
+    h4 Description
+    p = current_community.description
 
   = button_to "Sign up", new_user_registration_path, method: :get, class: "btn btn-primary m-3"
 

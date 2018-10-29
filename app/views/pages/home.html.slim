@@ -22,7 +22,7 @@ main role="main"
                 = image_tag community.thumbnail, class: "thumbnail"
                 .card-body
                   h3 = community.name
-                  p.card-text = community.description
+                  p.card-text = community.truncated_description
                   .d-flex.justify-content-between.align-items-center
                     = button_to "View", root_url(subdomain: community.subdomain),
                       method: :get, class: "btn btn-sm btn-outline-secondary"
