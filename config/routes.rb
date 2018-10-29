@@ -21,18 +21,21 @@ Rails.application.routes.draw do
       skip: %i[omniauth_callbacks]
 
     authenticated :user do
-      resources :posts, except: :index do
-        resources :comments, except: %i[index show]
-        resources :ratings, only: :create
+      scope module: :communities do
+        resources :posts, except: :index do
+          resources :comments, except: %i[index show]
+          resources :ratings, only: :create
+        end
+
+        resources :users, only: :index
       end
 
       resource :community, except: %i[new create index]
-      resources :users, only: :index
 
       root "communities#show"
     end
 
-    root "preview#show"
+    root "communities/preview#show"
   end
 
   root "pages#home"

@@ -1,8 +1,8 @@
 .text-center
+  h1.h3.font-weight-normal
+    = t "devise.invitations.new.header"
   = simple_form_for resource, as: resource_name, url: invitation_path(resource_name),
     html: { class: "user-form" } do |f|
-    h1.h3.mb-3.font-weight-normal
-      = t "devise.invitations.new.header"
     p.text-muted
       = t "devise.invitations.new.description"
     - resource.class.invite_key_fields.each do |field|

@@ -1,0 +1,16 @@
+.container-fluid.media
+  = image_tag user.avatar, class: "m-3 media-object rounded-circle"
+  .media-body.p-3
+    .media-heading.text-uppercase.reviews
+      = user.full_name
+    .card-text.text-muted
+      p
+        ' Email:
+        = user.email
+      p
+        ' Rating:
+        = user.rating
+        span>
+        ' Posts count:
+        = user.posts_count
+hr

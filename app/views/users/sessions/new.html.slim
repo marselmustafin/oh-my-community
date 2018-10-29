@@ -1,7 +1,7 @@
 .text-center
+  h1.h3.font-weight-normal Sign in
   = simple_form_for resource, as: resource_name, url: session_path(resource_name),
     html: { class: "user-form" } do |f|
-    h1.h3.mb-3.font-weight-normal Sign in
     = f.input :email, required: true, label: false, autofocus: true, input_html: { class: "form-control" }
     = f.input :password, required: true, label: false, input_html: { class: "form-control" }
     = f.input :remember_me, as: :boolean
@@ -14,3 +14,4 @@
   = link_to user_google_oauth2_omniauth_authorize_url(subdomain: "",
       community_id: current_community.id, community_subdomain: current_community.subdomain) do
     = image_tag "btn_google.png", class: "mb-3"
+br
