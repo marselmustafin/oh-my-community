@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   validates :text, length: { minimum: 300 }
 
   pg_search_scope :search_by_title_and_author_name,
-    against: %i[title],
+    against: :title,
     associated_against: {
       author: :full_name
     },
