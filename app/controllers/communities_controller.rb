@@ -22,7 +22,7 @@ class CommunitiesController < ApplicationController
   private
 
   def fetch_posts
-    Posts::SearchQuery.new(posts_search_params[:keywords])
+    Posts::SearchQuery.new(posts_search_params[:keywords], current_community.posts)
                       .all
                       .includes(:author)
                       .order(created_at: :desc)
