@@ -9,12 +9,23 @@
 
   h1.m-4 Recent posts
 
+.search-form.row.justify-content-center.m-3
+  .col-md-8
+    = form_tag(root_path, method: :get) do
+      = text_field_tag :keywords, nil, id: "search-input", class: "form-control", placeholder: "Search by title or author name"
+- if params[:keywords].present?
+  .text-center.m-4
+    h5
+      | Posts by query
+      b<
+        = "\"#{params[:keywords]}\""
 - if posts.empty?
   .text-center
     p There is no posts yet:(
-  br
 - else
   .row
     = render partial: "communities/posts/post", collection: posts
   .d-flex.justify-content-center.m-5
     = paginate posts
+
+br
