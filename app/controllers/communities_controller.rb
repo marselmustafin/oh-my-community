@@ -22,10 +22,15 @@ class CommunitiesController < ApplicationController
   private
 
   def fetch_posts
-    current_community.posts
-                     .includes(:author)
-                     .order(created_at: :desc)
-                     .page(params[:page])
+    Posts::SearchQuery.new(posts_search_params[:keywords])
+                      .all
+                      .includes(:author)
+                      .order(created_at: :desc)
+                      .page(params[:page])
+  end
+
+  def posts_search_params
+    params.permit(:keywords)
   end
 
   def community_params

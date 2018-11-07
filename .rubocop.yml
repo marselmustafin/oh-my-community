@@ -73,6 +73,9 @@ Style/FrozenStringLiteralComment:
 Style/StringMethods:
   Enabled: true
 
+Style/AccessModifierDeclarations:
+  Enabled: false
+
 Metrics/LineLength:
   Max: 120
 
