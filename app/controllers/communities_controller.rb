@@ -24,7 +24,6 @@ class CommunitiesController < ApplicationController
   def fetch_posts
     Posts::SearchQuery.new(posts_search_params[:keywords])
                       .all
-                      .includes(:author)
                       .order(created_at: :desc)
                       .page(params[:page])
   end
