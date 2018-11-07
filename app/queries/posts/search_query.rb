@@ -11,7 +11,7 @@ module Posts
     def all
       return relation if keywords.blank?
 
-      relation.includes(:author).search_by_title_and_author_name(keywords)
+      relation.search_by_title_and_author_name(keywords)
     end
   end
 end
