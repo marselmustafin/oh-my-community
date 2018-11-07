@@ -20,4 +20,12 @@ class CommunityDecorator < ApplicationDecorator
   def users_count
     pluralize(object.users.count, "user")
   end
+
+  def posts_count
+    pluralize(object.posts.count, "post")
+  end
+
+  def owner_name
+    community.owner.full_name
+  end
 end

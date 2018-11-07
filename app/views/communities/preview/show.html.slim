@@ -2,15 +2,28 @@
   .container.border.rounded
     h1.m-3 = current_community.name
 
-    = image_tag current_community.thumbnail, class: "m-3 border rounded"
+    = image_tag current_community.thumbnail, class: "thumbnail m-3 border rounded"
 
-    h4 Description
-    p = current_community.description
+    .container
+      .text-center.mt-3
+        b> Users count:
+        = current_community.users_count
+        span>
+        b> Posts count:
+        = current_community.posts_count
+      p.m-3
+        b> Owner:
+        = current_community.owner_name
+      h4 Description
+      p = current_community.description
 
+  br
   = button_to "Sign up", new_user_registration_path, method: :get, class: "btn btn-primary m-3"
 
   p
     | Already registered?
     '
     = link_to "Sign in", new_user_session_path
+
+  = button_to "Back to home page", root_url(subdomain: ""), method: :get, class: "btn btn-outline-secondary btn-sm m-3"
   br
