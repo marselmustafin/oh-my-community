@@ -26,6 +26,6 @@ class CommunityDecorator < ApplicationDecorator
   end
 
   def owner_name
-    community.owner.full_name
+    community&.owner&.full_name || "DELETED"
   end
 end
