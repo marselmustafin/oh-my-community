@@ -41,7 +41,7 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth, community_id)
-    find_or_create_by!(provider: auth.provider, uid: auth.uid, community_id: community_id) do |user|
+    find_or_create_by(provider: auth.provider, uid: auth.uid, community_id: community_id) do |user|
       user.full_name = auth.info.name
       user.email = auth.info.email
       user.avatar.attach(io: URI.parse(auth.info.image).open, filename: "photo.jpg")
