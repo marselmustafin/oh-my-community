@@ -26,8 +26,11 @@ class User < ApplicationRecord
   pg_search_scope :search_by_full_name_and_email,
     against: %i[full_name email],
     using: {
-      tsearch: { prefix: true },
-      trigram: { threshold: 0.3 }
+      tsearch: {
+        prefix: true,
+        any_word: true
+      },
+      trigram: { threshold: 0.1 }
     }
 
   def self.find_for_authentication(warden_conditions)
