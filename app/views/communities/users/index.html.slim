@@ -5,8 +5,8 @@
   = form_tag(users_path, method: :get) do
     .row
       .col-4
-        = label_tag :min_rating, "Search by name:"
-        = text_field_tag :keywords, nil, class: "form-control"
+        = label_tag :keywords, "Search by name:"
+        = text_field_tag :keywords, nil, class: "form-control", id: "search-input"
       .col-4
         = label_tag :min_rating, "Min  Rating:"
         = number_field_tag :min_rating, nil, in: 0..5, step: 0.1, class: "form-control"
@@ -18,7 +18,7 @@
             = ff.select :order, options_for_select(%w[desc asc]), {}, class: "form-control"
     .text-center
       .form-actions.m-3
-        = submit_tag "Apply", class: "btn btn-primary"
+        = submit_tag "Apply", class: "btn btn-outline-primary"
 
 hr
 
