@@ -9,14 +9,10 @@ module Ratings
       context.rating = rating
     end
 
-    def rollback
-      rating.destroy
-    end
-
     private
 
     def rating
-      @rating ||= Rating.create(params)
+      @rating ||= Rating.create!(params)
     end
   end
 end

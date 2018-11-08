@@ -7,12 +7,8 @@ module Ratings
     delegate :author, to: :post, prefix: true
 
     def call
-      ActiveRecord::Base.transaction do
-        post.update!(average_rating: post_avg_rating)
-        post_author.update!(rating: author_avg_rating)
-      end
-    rescue ActiveRecord::ActiveRecordError => e
-      context.fail!(error: e.message)
+      post.update!(average_rating: post_avg_rating)
+      post_author.update!(rating: author_avg_rating)
     end
 
     private
