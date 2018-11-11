@@ -35,11 +35,6 @@ GEM
     active_link_to (1.0.5)
       actionpack
       addressable
-    active_model_serializers (0.10.7)
-      actionpack (>= 4.1, < 6)
-      activemodel (>= 4.1, < 6)
-      case_transform (>= 0.2)
-      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (5.2.1)
       activesupport (= 5.2.1)
       globalid (>= 0.3.6)
@@ -62,8 +57,6 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (6.0.0)
-      activerecord (~> 5.0)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     archive-zip (0.11.0)
@@ -113,8 +106,6 @@ GEM
     capybara-screenshot (1.0.21)
       capybara (>= 1.0, < 4)
       launchy
-    case_transform (0.2)
-      activesupport
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
@@ -244,7 +235,6 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (2.1.0)
-    jsonapi-renderer (0.2.0)
     jwt (2.1.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -549,8 +539,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
-  active_model_serializers (~> 0.10.0)
-  acts-as-taggable-on (~> 6.0)
   autoprefixer-rails
   awesome_print
   aws-sdk-s3
@@ -638,4 +626,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
