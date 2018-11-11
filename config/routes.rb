@@ -28,6 +28,8 @@ Rails.application.routes.draw do
         end
 
         resources :users, only: :index
+        resources :users_autocompletions, only: :index
+        resources :posts_autocompletions, only: :index
       end
 
       resource :community, except: %i[new create index]

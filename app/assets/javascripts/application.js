@@ -10,5 +10,6 @@
 //= require jquery-ujs
 //= require trix
 //= require jquery.raty
+//= require jquery.easy-autocomplete.min
 //= require_tree ../templates
 //= require_tree .
