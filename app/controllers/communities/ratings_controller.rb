@@ -11,7 +11,7 @@ module Communities
     private
 
     def approve_rating
-      @approve_rating ||= Ratings::Rate.call(params: rating_params)
+      @approve_rating ||= Ratings::RatePost.call(params: rating_params)
     end
 
     def rating_params
