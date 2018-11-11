@@ -19,7 +19,7 @@ module Posts
     private
 
     def matched_posts
-      Posts::SearchQuery.new(keywords, community.posts)
+      Posts::SearchQuery.new(keywords: keywords, relation: community.posts)
                         .all
                         .limit(BATCH_SIZE)
     end
