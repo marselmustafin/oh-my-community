@@ -1,2 +1,6 @@
-$("#comment-form textarea").val("");
-$("#post-comments").prepend("<%= j render comment %>");
+<% if comment.errors.empty? %>
+  $("#comment-form textarea").val("");
+  $("#post-comments").prepend("<%= j render comment %>");
+<% else %>
+  $("#comment-error").html("<%= j render partial: "alert", locals: { comment: comment } %>");
+<% end %>
