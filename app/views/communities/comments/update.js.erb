@@ -1,1 +1,6 @@
-$("#comment<%= comment.id %>").html("<%= j render "comment", comment: comment %>");
+<% if comment.errors.empty? %>
+  $("#comment<%= comment.id %>").html("<%= j render "comment", comment: comment %>");
+<% else %>
+  $("#comment-error<%= comment.id %>").show();
+  $("#comment-error<%= comment.id %>").html("<%= j render partial: "alert", locals: { comment: comment } %>");
+<% end %>
