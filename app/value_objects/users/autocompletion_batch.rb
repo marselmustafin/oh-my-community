@@ -19,7 +19,7 @@ module Users
     private
 
     def matched_users
-      Users::FilteredQuery.new({ keywords: keywords }, community.users)
+      Users::FilteredQuery.new(keywords: keywords, relation: community.users)
                           .all
                           .limit(BATCH_SIZE)
                           .with_pg_search_highlight

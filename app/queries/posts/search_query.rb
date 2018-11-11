@@ -3,7 +3,7 @@ module Posts
     attr_reader :keywords, :relation
     private :keywords, :relation
 
-    def initialize(keywords, relation = Post.all.includes(:author))
+    def initialize(keywords:, relation: Post.all.includes(:author))
       @relation = relation
       @keywords = keywords
     end

@@ -13,9 +13,8 @@
       .col-2
         = label_tag :sorting, "Sort by:"
         .d-flex.column
-          = fields_for :sorting do |ff|
-            = ff.select :sort_param, options_for_select(%w[rating posts_count]), {}, class: "form-control"
-            = ff.select :order, options_for_select(%w[desc asc]), {}, class: "form-control"
+          = select_tag :sort_param, options_for_select(%w[rating posts_count]), class: "form-control"
+          = select_tag :order, options_for_select(%w[desc asc]), class: "form-control"
     .text-center
       .form-actions.m-3
         = submit_tag "Apply", class: "btn btn-outline-primary"
