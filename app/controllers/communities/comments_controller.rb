@@ -15,8 +15,6 @@ module Communities
 
     def update
       comment.update(comment_params)
-
-      respond_with comment
     end
 
     def destroy
