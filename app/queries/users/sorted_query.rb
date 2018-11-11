@@ -23,7 +23,7 @@ module Users
     end
 
     def order
-      @order = sort_params.fetch(:order, :desc).to_sym
+      sort_params.fetch(:order, :desc).to_sym
     end
 
     def sort_by_rating(relation, order)
