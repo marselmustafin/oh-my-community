@@ -1,5 +1,5 @@
 class PostDecorator < ApplicationDecorator
-  delegate :id, :author, :title, :text, :ratings, :comments, :average_rating
+  delegate :id, :author, :title, :text, :ratings, :comments, :average_rating, :tag_list
 
   TRUNCATION_SIZE = 160
 

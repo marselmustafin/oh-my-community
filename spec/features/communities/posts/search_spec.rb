@@ -11,11 +11,11 @@ feature "Search Posts" do
   end
 
   def fill_search_input_with(query)
-    fill_in("search-input", with: query)
+    fill_in("post-search-input", with: query)
   end
 
   def submit_search_form
-    find("#search-input").native.send_keys(:return)
+    find("#post-search-input").native.send_keys(:return)
   end
 
   scenario "User searches some posts" do

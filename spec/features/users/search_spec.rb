@@ -11,7 +11,7 @@ feature "Search Users" do
   end
 
   def fill_search_input_with(query)
-    fill_in("search-input", with: query)
+    fill_in("user-search-input", with: query)
   end
 
   scenario "User searches some users" do
