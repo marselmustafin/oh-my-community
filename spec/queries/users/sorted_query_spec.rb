@@ -1,9 +1,9 @@
 require "rails_helper"
 
 describe Users::SortedQuery do
-  subject(:query) { described_class.new(filter_params) }
+  subject(:query) { described_class.new(sort_params) }
 
-  let(:sorted_params) { {} }
+  let(:sort_params) { {} }
 
   let!(:first_user) { create :user, full_name: "Richard III", rating: 5.0, posts_count: 3 }
   let!(:second_user) { create :user, full_name: "John Travolta", rating: 3.5, posts_count: 2 }
@@ -13,9 +13,9 @@ describe Users::SortedQuery do
     subject(:result) { query.all }
 
     context "when sort param is rating" do
-      let(:filter_params) do
+      let(:sort_params) do
         {
-          rating: :asc
+          sort_param: "rating"
         }
       end
 
@@ -25,9 +25,9 @@ describe Users::SortedQuery do
     end
 
     context "when sort param is posts_count" do
-      let(:filter_params) do
+      let(:sort_params) do
         {
-          posts_count: :desc
+          sort_param: "posts_count"
         }
       end
 

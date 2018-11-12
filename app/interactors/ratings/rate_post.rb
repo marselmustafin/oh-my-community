@@ -1,17 +1,23 @@
 module Ratings
-  class UpdateAverageRatings
+  class RatePost
     include Interactor
 
-    delegate :rating, to: :context
+    delegate :params, to: :context
     delegate :post, to: :rating
     delegate :author, to: :post, prefix: true
 
     def call
-      post.update!(average_rating: post_avg_rating)
-      post_author.update!(rating: author_avg_rating)
+      ActiveRecord::Base.transaction do
+        post.update!(average_rating: post_avg_rating)
+        post_author.update!(rating: author_avg_rating)
+      end
     end
 
     private
+
+    def rating
+      @rating ||= Rating.create!(params)
+    end
 
     def post_avg_rating
       @post_avg_rating ||= post.ratings.average(:value).to_f

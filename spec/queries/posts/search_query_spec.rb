@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Posts::SearchQuery do
-  subject(:query) { described_class.new(keywords) }
+  subject(:query) { described_class.new(keywords: keywords) }
 
   let(:keywords) { "" }
 
