@@ -1,9 +1,9 @@
 .text-center
   h1 = current_community.name
-  = button_to "Show all users", users_path, method: :get, class: "btn btn-outline-secondary btn-sm m-3"
+  = link_to "Show all users", users_path, class: "btn btn-outline-secondary btn-sm m-3"
 
 .text-center
-  = button_to "Create Post", new_post_path, method: :get, class: "btn btn-primary m-3"
+  = link_to "Create Post", new_post_path, class: "btn btn-primary m-3"
 
   hr
 

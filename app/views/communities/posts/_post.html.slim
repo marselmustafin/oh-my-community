@@ -8,6 +8,6 @@
       .card-text
         = sanitize post.truncated_text
         .d-flex.justify-content-between.align-items-center.mt-3
-          = button_to "Show", post, method: :get, class: "btn btn-primary"
+          = link_to "Show", post, class: "btn btn-primary"
           small.text-muted
             = post.created_at

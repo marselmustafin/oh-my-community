@@ -18,12 +18,12 @@
       p = current_community.description
 
   br
-  = button_to "Sign up", new_user_registration_path, method: :get, class: "btn btn-primary m-3"
+  = link_to "Sign up", new_user_registration_path, class: "btn btn-primary m-3"
 
   p
     | Already registered?
     '
     = link_to "Sign in", new_user_session_path
 
-  = button_to "Back to home page", root_url(subdomain: ""), method: :get, class: "btn btn-outline-secondary btn-sm m-3"
+  = link_to "Back to home page", root_url(subdomain: ""), class: "btn btn-outline-secondary btn-sm m-3"
   br
