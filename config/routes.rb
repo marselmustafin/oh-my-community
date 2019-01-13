@@ -22,8 +22,8 @@ Rails.application.routes.draw do
 
     authenticated :user do
       scope module: :communities do
-        resources :posts, except: :index do
-          resources :comments, except: %i[index show]
+        resources :posts, only: %i[show new create edit update destroy] do
+          resources :comments, only: %i[create edit update destroy]
           resources :ratings, only: :create
         end
 
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
         resources :posts_autocompletions, only: :index
       end
 
-      resource :community, except: %i[new create index]
+      resource :community, only: %i[show edit update destroy]
 
       root "communities#show"
     end

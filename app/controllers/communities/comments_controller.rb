@@ -8,8 +8,6 @@ module Communities
     def create
       comment.commenter = current_user
       comment.save
-
-      respond_with comment
     end
 
     def edit
@@ -17,8 +15,6 @@ module Communities
 
     def update
       comment.update(comment_params)
-
-      respond_with comment
     end
 
     def destroy
